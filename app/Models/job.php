@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Job extends Model
 {
+
+public function tags()
+{
+return $this->belongsToMany(\App\Models\Tag::class, foreignPivotKey:
+"job_listing_id");
+}
+
     use HasFactory;
 
     // Each job belongs to one employer
