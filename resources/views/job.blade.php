@@ -9,22 +9,14 @@
       <!-- Job Title -->
       <h2 class="text-3xl font-extrabold text-emerald-700 mb-4">
         {{ $job->title }}
-      </h2>
+      </h2 >
 
-      <!-- Employer -->
-      <p class="text-lg text-gray-700 mb-2">
-        <span class="font-semibold text-emerald-600">{{ $job }}</span>
-      </p>
-
-      <!-- Salary -->
-      <p class="text-lg mb-4">
-        💰 Salary: 
-        <span class="font-bold text-emerald-700">${{ $job->salary }} USD</span> per year
+    <p class="text-black"> This job pays {{ $job['salary'] }} per year.
       </p>
 
       <!-- Location (if exists) -->
       @if($job->location)
-        <p class="text-md text-gray-600 mb-6">
+        <p class="text-md text-blue-600 mb-6">
           📍 Location: {{ $job->location }}
         </p>
       @endif

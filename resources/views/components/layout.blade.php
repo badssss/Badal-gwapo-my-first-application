@@ -41,10 +41,12 @@
     <p class="max-w-2xl mx-auto mt-4 text-lg opacity-90">
       {{ $slot }}
     </p>
+    @if (request()->is('/'))
     <a href="/jobs" 
-       class="inline-block mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition">
-       Learn More
+       class="inline-block bg-emerald-600 text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-emerald-700 hover:scale-105 transform transition duration-300">
+      Explore Jobs
     </a>
+  @endif
   </div>
 </section>
 
