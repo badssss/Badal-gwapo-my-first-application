@@ -18,7 +18,7 @@
       <nav class="hidden md:block">
         <ul class="flex space-x-6 text-lg font-medium">       
         <x-nav-link href="/" :active="request()->is('/')"  class="hover:text-blue-600">Home</x-nav-link>
-<x-nav-link href="/jobs" :active="request()->is('jobs')"  class="hover:text-blue-600">Jobs</x-nav-link>
+        <x-nav-link href="/jobs" :active="request()->is('jobs')"  class="hover:text-blue-600">Jobs</x-nav-link>
       </nav>
     </div>
   </header>
