@@ -16,10 +16,9 @@
       <h1 class="text-2xl font-bold text-blue-600">MyLaravelApp</h1>
 
       <nav class="hidden md:block">
-        <ul class="flex space-x-6 text-lg font-medium">
-        <x-nav-link href="/" class="hover:text-blue-600">Home</x-nav-link>
-        <x-nav-link href="/about" class="hover:text-blue-600">about</x-nav-link>       
-        <x-nav-link href="/contact" class="hover:text-blue-600">contact</x-nav-link> </ul>
+        <ul class="flex space-x-6 text-lg font-medium">       
+        <x-nav-link href="/" :active="request()->is('/')"  class="hover:text-blue-600">Home</x-nav-link>
+<x-nav-link href="/jobs" :active="request()->is('jobs')"  class="hover:text-blue-600">Jobs</x-nav-link>
       </nav>
     </div>
   </header>
@@ -27,7 +26,7 @@
   <!-- HERO SECTION -->
   <section class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
    <h1 class="max-w-2xl mx-auto text-lg" >
-    {{ $headings }}    </h1>
+    {{ $headings }}</h1>
    
     <h1 class="max-w-2xl mx-auto text-lg" >
     {{ $slot }}    </h1>
