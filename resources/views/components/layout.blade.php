@@ -24,18 +24,30 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="text-center py-20 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-   <h1 class="max-w-2xl mx-auto text-lg" >
-    {{ $headings }}</h1>
-   
-    <h1 class="max-w-2xl mx-auto text-lg" >
-    {{ $slot }}    </h1>
- 
-    <a href="/about" 
+<section class="relative text-center py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white overflow-hidden">
+  
+  <!-- Background decoration -->
+  <div class="absolute inset-0">
+    <div class="absolute top-20 left-1/3 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+    <div class="absolute bottom-20 right-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+    <div class="absolute top-40 right-1/3 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10">
+    <h1 class="max-w-2xl mx-auto text-4xl font-extrabold drop-shadow-lg">
+      {{ $heading ?? '' }}
+    </h1>
+    <p class="max-w-2xl mx-auto mt-4 text-lg opacity-90">
+      {{ $slot }}
+    </p>
+    <a href="/jobs" 
        class="inline-block mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-gray-100 transition">
        Learn More
     </a>
-  </section>
+  </div>
+</section>
+
 
 </body>
 </html>
