@@ -12,4 +12,9 @@
       </li>
     @endforeach
   </ul>
+
+  <!-- Pagination links -->
+  <div class="mt-6">
+    {{ $jobs->links() }}
+  </div>
 </x-layout>
