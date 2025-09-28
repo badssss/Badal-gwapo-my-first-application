@@ -1,30 +1,18 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace App\Models;
 
-return new class extends Migration
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+function up(): void
 {
-    /**
-     * Run the migrations.
-     */
-public function up(): void
-{
-    Schema::create('jobs', function (Blueprint $table) {
+    Schema::create('job_listings', function (Blueprint $table) {
         $table->id();
         $table->string('title');
         $table->string('salary');
-        $table->foreignId('employer_id')->constrained()->cascadeOnDelete();
+        $table->unsignedBigInteger('employer_id')->nullable();
         $table->timestamps();
     });
 }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('job_listings');
-    }
-};
