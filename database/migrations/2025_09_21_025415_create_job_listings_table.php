@@ -5,14 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-function up(): void
+class JobListing extends Model
 {
-    Schema::create('job_listings', function (Blueprint $table) {
-        $table->id();
-        $table->string('title');
-        $table->string('salary');
-        $table->unsignedBigInteger('employer_id')->nullable();
-        $table->timestamps();
-    });
-}
+    use HasFactory;
 
+    // Allow mass assignment for these fields
+    protected $fillable = [
+        'title',
+        'salary',
+        'employer_id',
+    ];
+
+    /**
+     * Employer relationship
+     * A job belongs to an employer
+     */
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+}

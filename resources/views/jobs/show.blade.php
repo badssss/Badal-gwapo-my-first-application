@@ -9,9 +9,9 @@
       <!-- Job Title -->
       <h2 class="text-3xl font-extrabold text-emerald-700 mb-4">
         {{ $job->title }}
-      </h2 >
+      </h2>
 
-    <p class="text-black"> This job pays {{ $job['salary'] }} per year.
+      <p class="text-black"> This job pays {{ $job->salary }} per year.
       </p>
 
       <!-- Location (if exists) -->
@@ -26,12 +26,20 @@
         {{ $job->description ?? "No detailed description available for this position." }}
       </p>
 
-      <!-- CTA Button -->
-      <div class="text-center">
+      <!-- Action Buttons -->
+      <div class="flex justify-center gap-4">
+        <!-- Back to Jobs -->
         <a href="/jobs" 
            class="inline-block px-6 py-3 bg-emerald-600 text-white font-semibold rounded-full 
                   shadow hover:bg-emerald-700 transition">
           ← Back to Jobs
+        </a>
+
+        <!-- Edit Job -->
+        <a href="/jobs/{{ $job->id }}/edit" 
+           class="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full 
+                  shadow hover:bg-indigo-700 transition">
+          ✏️ Edit Job
         </a>
       </div>
     </div>

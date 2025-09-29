@@ -14,7 +14,10 @@
                 <label for="title" class="block text-lg font-medium text-gray-200">Job Title</label>
                 <input type="text" id="title" name="title" 
                        class="w-full mt-2 px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-pink-500 outline-none"
-                       placeholder="Enter job title">
+                       placeholder="Enter job title" required>
+                @error('title')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <!-- Salary -->
@@ -22,7 +25,10 @@
                 <label for="salary" class="block text-lg font-medium text-gray-200">Salary</label>
                 <input type="text" id="salary" name="salary" 
                        class="w-full mt-2 px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 focus:ring-2 focus:ring-pink-500 outline-none"
-                       placeholder="Enter salary (e.g. $50,000)">
+                       placeholder="Enter salary (e.g. 50000)" required>
+                @error('salary')
+                    <p class="text-xs text-red-500 mt-1">{{ $message }}</p>
+                @enderror
             </div>
 
             <!-- Submit Button -->
