@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\JobListing;
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -71,3 +72,8 @@ Route::delete('/jobs/{job}', function (JobListing $job) {
     $job->delete();
     return redirect('/jobs');
 });
+
+// --- JobController Resource Route ---
+// This adds all the controller-based routes for JobController 
+// without changing the existing closures. 
+Route::resource('jobs-controller', JobController::class);
